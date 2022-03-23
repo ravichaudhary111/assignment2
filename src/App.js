@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React,{useState} from "react"
 
 function App() {
-  return (
+
+  const[valA,setValA]=useState(false);
+  function handleClickA(){
+   setValA(true);
+  }
+  const[valB,setValB]=useState(false);
+  function handleClickB(){
+   setValB(true);
+  }
+  return (<>
+  
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button id="button-a" onClick={handleClickA}>Buttton-A</button>
+      <button id="button-b" onClick={handleClickB}>Buttton-A</button>
     </div>
+    {
+      valA?<h3>Button id is:-button-a</h3>:null
+      
+    }
+    {
+      valB?<h3>Button id is:-button-b</h3>:null
+    }
+    </>
   );
 }
 
